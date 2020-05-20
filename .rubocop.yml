@@ -26,6 +26,8 @@ Style/PercentLiteralDelimiters:
     "%": "{}"
     "%i": "()"
     "%w": "()"
+Metrics/BlockLength:
+  Enabled: false
 
 Lint/RaiseException:
   Enabled: true
