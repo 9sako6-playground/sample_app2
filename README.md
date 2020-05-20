@@ -49,7 +49,7 @@ $ rails server
 **Must**
 
 - [x] Rails 6.0.3 + Ruby 2.7.1
-- [ ] rspec を使う
+- [x] rspec を使う
 
 **Optional**
 
@@ -58,7 +58,7 @@ $ rails server
 - [ ] presidentbeef/brakeman を使う
 - ~~Docker を使う~~
 - [ ] CI を使う
-- [ ] Bootstrap 以外の UI フレームワークを開拓して使う
+- [x] Bootstrap 以外の UI フレームワークを開拓して使う
   - tailwindcss
     参考: [Rails 6 and Tailwind CSS via Webpacker— Getting Started](https://medium.com/@davidteren/rails-6-and-tailwindcss-getting-started-42ba59e45393)
-- [ ] haml/haml を使う
+- [x] haml/haml を使う
