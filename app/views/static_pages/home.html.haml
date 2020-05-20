@@ -1,6 +1,7 @@
 - title = 'Home'
 = provide(:title, title)
-%h1 Sample App
+%h1.mb-4.text-4xl Sample App
 %p
   This is the home page for the
-  %a{href: "https://railstutorial.jp/"} Ruby on Rails Tutorial sample application.
+  %a.text-blue-600.hover:underline{href: "https://railstutorial.jp/"} Ruby on Rails Tutorial sample application.
+.m-6= link_to 'Sign up now!', '#', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'

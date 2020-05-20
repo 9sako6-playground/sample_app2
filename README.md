@@ -59,4 +59,6 @@ $ rails server
 - ~~Docker を使う~~
 - [ ] CI を使う
 - [ ] Bootstrap 以外の UI フレームワークを開拓して使う
+  - tailwindcss
+    参考: [Rails 6 and Tailwind CSS via Webpacker— Getting Started](https://medium.com/@davidteren/rails-6-and-tailwindcss-getting-started-42ba59e45393)
 - [ ] haml/haml を使う

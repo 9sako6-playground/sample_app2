@@ -7,29 +7,24 @@ RSpec.describe StaticPagesController, type: :request do
 
   it 'should get root' do
     get root_url
-    expect(response).to have_http_status 200
-  end
-
-  it 'should get home' do
-    get static_pages_home_url
     expect(response).to have_http_status 200 # TODO: responseはどこからやってきた?
     assert_select 'title', "Home | #{base_title}"
   end
 
   it 'should get help' do
-    get static_pages_help_url
+    get help_url
     expect(response).to have_http_status 200
     assert_select 'title', 'Help | Ruby on Rails Tutorial Sample App'
   end
 
   it 'should get about' do
-    get static_pages_about_url
+    get about_url
     expect(response).to have_http_status 200
     assert_select 'title', 'About | Ruby on Rails Tutorial Sample App'
   end
 
   it 'should get contact' do
-    get static_pages_contact_url
+    get contact_url
     expect(response).to have_http_status 200
     assert_select 'title', 'Contact | Ruby on Rails Tutorial Sample App'
   end
