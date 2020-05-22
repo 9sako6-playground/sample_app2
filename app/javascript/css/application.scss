@@ -1,0 +1,47 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+.form-wrapper {
+  @apply mb-5;
+}
+
+.form-wrapper input {
+  @apply bg-gray-200;
+  @apply appearance-none;
+  @apply border-2;
+  @apply border-gray-200;
+  @apply rounded;
+  @apply w-full;
+  @apply py-2;
+  @apply px-4;
+  @apply text-gray-700;
+  @apply leading-tight;
+
+  &:focus {
+    @apply outline-none;
+    @apply bg-white;
+    @apply border-purple-500;
+
+  }
+}
+
+.form-button-wapper input {
+  @apply bg-blue-500;
+  @apply text-white;
+  @apply font-bold;
+  @apply py-2;
+  @apply px-4;
+  @apply rounded;
+
+  &:hover {
+    @apply bg-blue-700;
+    @apply cursor-pointer;
+  }
+}
+
+.field_with_errors input {
+  @apply border-red-500;
+}
+
+@import "tailwindcss/utilities";

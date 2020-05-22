@@ -1,4 +1,27 @@
 - title = 'Sign up'
 = provide(:title, title)
-%h1.mb-4.text-4xl= title
-%p This will be a signup page for new users.
+%div{class: 'max-w-xl m-auto'}
+  %h1.mb-4.text-4xl= title
+  %div
+    = form_for(@user, url: signup_path) do |f|
+      = render 'shared/error_messages'
+
+      %div.form-wrapper
+        .text-left= f.label :name
+        = f.text_field :name
+
+      %div.form-wrapper
+        .text-left= f.label :email
+        = f.email_field :email
+
+      %div.form-wrapper
+        .text-left= f.label :password
+        = f.password_field :password
+
+      %div.form-wrapper
+        .text-left= f.label :password_confirmation, "Confirmation"
+        = f.password_field :password_confirmation
+
+      %div.form-button-wapper
+        = f.submit 'Create my account'
+

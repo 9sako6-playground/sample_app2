@@ -1,0 +1,7 @@
+- provide(:title, @user.name)
+
+%div
+  %aside
+    %h1.flex.m-5.text-lg
+      = gravatar_for @user, size: 50
+      = @user.name
