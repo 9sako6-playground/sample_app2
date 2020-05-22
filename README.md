@@ -54,7 +54,7 @@ $ rails server
 **Optional**
 
 - [ ] Pagination に kaminari/kaminari を使う
-- [ ] fixtures に thoughtbot/factory_bot を使う
+- [x] fixtures に thoughtbot/factory_bot を使う
 - [ ] presidentbeef/brakeman を使う
 - ~~Docker を使う~~
 - [ ] CI を使う
