@@ -44,4 +44,8 @@
   @apply border-red-500;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 @import "tailwindcss/utilities";

@@ -1,2 +1,22 @@
-%h1 Sessions#new
-%p Find me in app/views/sessions/new.html.haml
+- title = 'Log in'
+- provide(:title, title)
+%div{class: 'max-w-xl m-auto'}
+  %h1.mb-4.text-4xl= title
+  %div
+    = form_for(:session, url: login_path) do |f|
+      -# = render 'shared/error_messages'
+
+      %div.form-wrapper
+        .text-left= f.label :email
+        = f.email_field :email
+
+      %div.form-wrapper
+        .text-left= f.label :password
+        = f.password_field :password
+
+      %div.form-button-wapper
+        = f.submit 'Log in'
+
+  %p.text-left
+    New user?
+    %a.text-blue-600.hover:underline{href: "#{signup_path}"} Sign up now!
