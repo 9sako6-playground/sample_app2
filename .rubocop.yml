@@ -53,7 +53,7 @@ Style/SlicingWithRange:
 Style/GlobalVars:
   Enabled: false
 
-EmptyLinesAroundAttributeAccessor:
+Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 
 Layout/SpaceAroundMethodCallOperator:
