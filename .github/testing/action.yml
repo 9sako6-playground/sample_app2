@@ -1,0 +1,5 @@
+name: "SampleApp2 Test"
+description: "SampleApp2 Test"
+runs:
+  using: "docker"
+  image: "Dockerfile"
