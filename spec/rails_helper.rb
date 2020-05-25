@@ -66,3 +66,9 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 end
+
+class Rack::Test::CookieJar
+  def signed
+    self
+  end
+end

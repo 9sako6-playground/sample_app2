@@ -35,6 +35,7 @@ RSpec.describe 'UsersLoginTest', type: :request do
       delete logout_path
       expect(loggedin?).to eq(false)
       expect(response).to redirect_to(root_url)
+      expect(response.code).to eq '302'
     end
   end
 end
