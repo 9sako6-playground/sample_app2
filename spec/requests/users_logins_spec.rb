@@ -36,6 +36,8 @@ RSpec.describe 'UsersLoginTest', type: :request do
       expect(loggedin?).to eq(false)
       expect(response).to redirect_to(root_url)
       expect(response.code).to eq '302'
+      # 2番目のウィンドウでログアウトするユーザーのシミュレート
+      delete logout_path
     end
   end
 end
