@@ -3,4 +3,4 @@
   %div.hidden.dropdown-menu.absolute.text-gray-700.rounded.bg-gray-300
     .mr-6.hover:bg-gray-400.p-3.w-full.rounded-t= link_to 'Profile', current_user
     .mr-6.hover:bg-gray-400.p-3.w-full= link_to 'Settings', '#'
-    .mr-6.hover:bg-gray-400.p-3.w-full.rounded-b= link_to 'Log out', logout_path
+    .mr-6.hover:bg-gray-400.p-3.w-full.rounded-b= link_to 'Log out', logout_path, method: :delete
