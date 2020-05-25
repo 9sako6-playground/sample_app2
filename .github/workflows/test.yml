@@ -2,8 +2,23 @@ name: SampleApp2 Test
 on: [push, pull_request]
 jobs:
   build:
-    name: verify
-    runs-on: ubuntu-latest    
+    name: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-    - uses: actions/checkout@master
-    - uses: ./.github/testing
+      - uses: actions/checkout@master
+      - name: Cache gems
+        uses: actions/cache@master
+        with:
+          path: vendor/bundle
+          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Cache node_modules
+        uses: actions/cache@master
+        with:
+          path: ./node_modules
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+      - uses: ./.github/testing

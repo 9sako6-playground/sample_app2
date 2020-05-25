@@ -1,9 +1,5 @@
 FROM ruby:2.7.1
-RUN apt-get update -qq && apt-get install -y \
-    bash \
-    git
-
-RUN gem install rails -v '6.0.3.1'
+RUN apt-get update -qq
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g yarn
