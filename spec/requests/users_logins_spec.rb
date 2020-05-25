@@ -39,5 +39,27 @@ RSpec.describe 'UsersLoginTest', type: :request do
       # 2番目のウィンドウでログアウトするユーザーのシミュレート
       delete logout_path
     end
+
+    it 'login with remembering' do
+      post login_path, params: {
+        session: {
+          email: user.email,
+          password: 'password',
+          remember_me: '1'
+        }
+      }
+      expect(cookies['remember_token']).to be_truthy
+    end
+
+    it 'login without remembering' do
+      post login_path, params: {
+        session: {
+          email: user.email,
+          password: 'password',
+          remember_me: '0'
+        }
+      }
+      expect(cookies['remember_token']).to be_nil
+    end
   end
 end
