@@ -15,8 +15,9 @@
         = f.password_field :password
 
       %div.leading-5
-        = f.check_box :remember_me
-        %span Remember me on this computer
+        = f.label :remember_me do
+          = f.check_box :remember_me
+          %span Remember me on this computer
 
       %div.form-button-wapper
         = f.submit 'Log in'

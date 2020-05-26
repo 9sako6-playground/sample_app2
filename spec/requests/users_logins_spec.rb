@@ -48,7 +48,7 @@ RSpec.describe 'UsersLoginTest', type: :request do
           remember_me: '1'
         }
       }
-      expect(cookies['remember_token']).to be_truthy
+      expect(cookies['remember_token']).to eq(assigns(:user).remember_token)
     end
 
     it 'login without remembering' do
