@@ -49,16 +49,15 @@ $ rails server
 **Must**
 
 - [x] Rails 6.0.3 + Ruby 2.7.1
-- [x] rspec を使う
+- [x] rspec
 
 **Optional**
 
-- [ ] Pagination に kaminari/kaminari を使う
-- [x] fixtures に thoughtbot/factory_bot を使う
-- [ ] presidentbeef/brakeman を使う
-- ~~Docker を使う~~
-- [ ] CI を使う
-- [x] Bootstrap 以外の UI フレームワークを開拓して使う
+- [ ] Pagination with kaminari/kaminari
+- [x] fixtures with thoughtbot/factory_bot
+- [ ] presidentbeef/brakeman
+- [x] auto testing with GitHub Actions
+- [x] UI framework
   - tailwindcss
-    参考: [Rails 6 and Tailwind CSS via Webpacker— Getting Started](https://medium.com/@davidteren/rails-6-and-tailwindcss-getting-started-42ba59e45393)
-- [x] haml/haml を使う
+    ref: [Rails 6 and Tailwind CSS via Webpacker— Getting Started](https://medium.com/@davidteren/rails-6-and-tailwindcss-getting-started-42ba59e45393)
+- [x] haml/haml
