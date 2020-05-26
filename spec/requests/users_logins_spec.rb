@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'UsersLoginTest', type: :request do
   include SessionsHelper
-  let(:user) { create(:user) }
+  let(:michael) { create(:michael) }
 
   describe 'login' do
     it 'login with invalid information' do
@@ -25,11 +25,11 @@ RSpec.describe 'UsersLoginTest', type: :request do
       get login_path
       post login_path, params: {
         session: {
-          email: user.email,
+          email: michael.email,
           password: 'password'
         }
       }
-      expect(response).to redirect_to(user_path(user))
+      expect(response).to redirect_to(user_path(michael))
       expect(loggedin?).to eq(true)
       # logout
       delete logout_path
@@ -43,7 +43,7 @@ RSpec.describe 'UsersLoginTest', type: :request do
     it 'login with remembering' do
       post login_path, params: {
         session: {
-          email: user.email,
+          email: michael.email,
           password: 'password',
           remember_me: '1'
         }
@@ -54,7 +54,7 @@ RSpec.describe 'UsersLoginTest', type: :request do
     it 'login without remembering' do
       post login_path, params: {
         session: {
-          email: user.email,
+          email: michael.email,
           password: 'password',
           remember_me: '0'
         }

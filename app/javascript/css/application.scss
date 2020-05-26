@@ -2,6 +2,7 @@
 
 @import "tailwindcss/components";
 
+/* purgecss start ignore */
 .form-wrapper {
   @apply mb-5;
 }
@@ -48,4 +49,8 @@
   display: block;
 }
 
+.alert-danger {
+  @apply bg-red-300;
+}
+/* purgecss end ignore */
 @import "tailwindcss/utilities";
