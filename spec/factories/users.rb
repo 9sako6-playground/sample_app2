@@ -8,6 +8,7 @@ FactoryBot.define do
     email { 'michael@example.com' }
     password { user_password }
     password_digest { User.digest(user_password) }
+    admin { true }
   end
   factory :archer, class: User do
     name { 'Sterling Archer' }

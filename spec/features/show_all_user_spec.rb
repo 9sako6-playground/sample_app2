@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'index', type: :feature do
   given(:michael) { create(:michael) }
   30.times do |i|
-    given!("user_#{i}".to_sym){ create("user_#{i}".to_sym) }
+    given!("user_#{i}".to_sym) { create("user_#{i}".to_sym) }
   end
 
   scenario 'should redirect index when not logged in' do
