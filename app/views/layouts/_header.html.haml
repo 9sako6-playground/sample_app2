@@ -6,6 +6,7 @@
         %li.mr-6.hover:text-gray-500.cursor-pointer= link_to 'Home', root_url
         %li.mr-6.hover:text-gray-500.cursor-pointer= link_to 'Help', help_url
         - if loggedin?
+          %li.mr-6.hover:text-gray-500.cursor-pointer= link_to 'Users', users_url
           = render 'layouts/dropdown'
         - else
           %li.mr-6.hover:text-gray-500.cursor-pointer= link_to 'Log in', login_path

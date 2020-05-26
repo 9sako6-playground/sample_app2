@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
-
+# Faker
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '6.0.3.1'
 # Use Puma as the app server
@@ -26,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'haml-rails', '~> 2.0'
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -35,8 +37,6 @@ group :development, :test do
   gem 'byebug', platforms: %i(mri mingw x64_mingw)
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
-  # Faker
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
   gem 'database_cleaner'
   gem 'factory_bot_rails'
