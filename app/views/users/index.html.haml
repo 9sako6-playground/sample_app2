@@ -1,5 +1,7 @@
 - provide(:title, 'All users')
 
+= paginate(@users)
+
 %div{class: 'max-w-xl m-auto'}
   %h1.mb-4.text-4xl All users
   %ul.users
@@ -7,3 +9,5 @@
       %li
         = gravatar_for(user, size: 50)
         = link_to(user.name, user)
+
+= paginate(@users)

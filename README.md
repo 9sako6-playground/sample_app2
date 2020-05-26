@@ -53,7 +53,7 @@ $ rails server
 
 **Optional**
 
-- [ ] Pagination with kaminari/kaminari
+- [x] pagination with kaminari/kaminari
 - [x] fixtures with thoughtbot/factory_bot
 - [ ] presidentbeef/brakeman
 - [x] auto testing with GitHub Actions

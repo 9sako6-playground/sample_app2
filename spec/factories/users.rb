@@ -15,4 +15,13 @@ FactoryBot.define do
     password { user_password }
     password_digest { User.digest(user_password) }
   end
+
+  30.times do |i|
+    factory "user_#{i}".to_sym, class: User do
+      name { "User #{i}" }
+      email { "user-#{i}@example.com" }
+      password { user_password }
+      password_digest { User.digest(user_password) }
+    end
+  end
 end
