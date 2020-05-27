@@ -12,6 +12,9 @@ Metrics/AbcSize:
 Layout/LineLength:
   Max: 160
 
+Style/AndOr:
+  Enabled: false
+
 Metrics/MethodLength:
   Max: 20
 

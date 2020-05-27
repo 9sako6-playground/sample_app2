@@ -46,6 +46,17 @@ class User < ApplicationRecord
     update_attribute(:remember_token, nil)
   end
 
+  # アカウントを有効にする
+  def activate
+    update_attribute(:activated, true)
+    update_attribute(:activated_at, Time.current)
+  end
+
+  # 有効化用のメールを送信する
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   private
 
   def downcase_email
