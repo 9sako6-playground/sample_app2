@@ -9,12 +9,16 @@ FactoryBot.define do
     password { user_password }
     password_digest { User.digest(user_password) }
     admin { true }
+    activated { true }
+    activated_at { Time.current }
   end
   factory :archer, class: User do
     name { 'Sterling Archer' }
     email { 'duchess@example.gov' }
     password { user_password }
     password_digest { User.digest(user_password) }
+    activated { true }
+    activated_at { Time.current }
   end
 
   30.times do |i|
@@ -23,6 +27,8 @@ FactoryBot.define do
       email { "user-#{i}@example.com" }
       password { user_password }
       password_digest { User.digest(user_password) }
+      activated { true }
+      activated_at { Time.current }
     end
   end
 end
