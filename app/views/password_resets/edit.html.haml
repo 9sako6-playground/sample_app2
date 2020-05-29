@@ -1,2 +1,20 @@
-%h1 PasswordResets#edit
-%p Find me in app/views/password_resets/edit.html.haml
+- title = 'Reset password'
+- provide(:title, title)
+%div{class: 'max-w-xl m-auto'}
+  %h1.mb-4.text-4xl= title
+  %div
+    = form_for(@user, url: password_reset_path(params[:id])) do |f|
+      = render 'shared/error_messages'
+
+      = hidden_field_tag :email, @user.email
+
+      %div.form-wrapper
+        .text-left= f.label :password
+        = f.password_field :password
+
+      %div.form-wrapper
+        .text-left= f.label :password_confirmation
+        = f.password_field :password_confirmation
+
+      %div.form-button-wapper
+        = f.submit 'Send'
