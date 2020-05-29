@@ -11,7 +11,9 @@
         = f.email_field :email
 
       %div.form-wrapper
-        .text-left= f.label :password
+        .text-left
+          = f.label :password
+          %a.text-blue-600.hover:underline{href: "#{new_password_reset_path}"} (forgot password?)
         = f.password_field :password
 
       %div.leading-5
