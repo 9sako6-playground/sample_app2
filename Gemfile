@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'haml-rails', '~> 2.0'
 gem 'kaminari'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -64,6 +67,7 @@ group :test do
 end
 
 group :production do
+  gem 'fog'
   gem 'pg'
 end
 
