@@ -1,7 +1,15 @@
 - title = 'Home'
 = provide(:title, title)
-%h1.mb-4.text-4xl Sample App
-%p
-  This is the home page for the
-  %a.text-blue-600.hover:underline{href: "https://railstutorial.jp/"} Ruby on Rails Tutorial sample application.
-.m-6= link_to 'Sign up now!', signup_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+
+- if loggedin?
+  %div
+    %aside
+      = render('shared/user_info')
+      = render('shared/micropost_form')
+    = render('shared/feed')
+- else
+  %h1.mb-4.text-4xl Sample App
+  %p
+    This is the home page for the
+    %a.text-blue-600.hover:underline{href: "https://railstutorial.jp/"} Ruby on Rails Tutorial sample application.
+  .m-6= link_to 'Sign up now!', signup_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'

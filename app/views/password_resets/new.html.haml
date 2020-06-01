@@ -4,7 +4,6 @@
   %h1.mb-4.text-4xl= title
   %div
     = form_for(:password_reset, url: password_resets_path) do |f|
-      -# = render 'shared/error_messages'
 
       %div.form-wrapper
         .text-left= f.label :email
