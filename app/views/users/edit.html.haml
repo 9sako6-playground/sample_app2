@@ -3,7 +3,7 @@
 %div{class: 'max-w-xl m-auto'}
   %h1.mb-4.text-4xl Update your profile
   %div
-    = form_for(@user) do |f|
+    = form_with(model: @user) do |f|
       = render 'shared/error_messages', object: @user
 
       %div.form-wrapper
