@@ -24,4 +24,17 @@ RSpec.describe Micropost, type: :model do
     post.content = 'a' * 141
     expect(post.valid?).to eq(false)
   end
+
+  xit 'order should be most recent first' do
+    expect(michael.microposts(:most_recent)).to eq(Micropost.first)
+  end
+
+  it 'associated microposts should be destroyed' do
+    michael.save
+    michael.microposts.create!(content: 'Lorem ipsum')
+    before_count = Micropost.count
+    expect do
+      michael.destroy
+    end.to(change { Micropost.count }.from(before_count).to(before_count - 1))
+  end
 end
