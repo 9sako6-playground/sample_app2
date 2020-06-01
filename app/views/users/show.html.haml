@@ -5,3 +5,11 @@
     %h1.flex.m-5.text-lg
       = gravatar_for @user, size: 50
       = @user.name
+
+%div
+  - if @user.microposts.any?
+    %h3= "Microposts (#{@user.microposts.count})"
+    = paginate(@microposts)
+    %ol.microposts
+      = render(@microposts)
+  = paginate(@microposts)
