@@ -15,26 +15,34 @@
 このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
 その後、次のコマンドで必要になる RubyGems をインストールします。
 
-```
-$ bundle install --without production
+```bash
+bundle install --without production
 ```
 
 その後、データベースへのマイグレーションを実行します。
 
+```bash
+bin/rails db:migrate
 ```
-$ rails db:migrate
+
+起動するには[ImageMagick](https://imagemagick.org/index.php)が必要です。
+
+```bash
+sudo yum install -y ImageMagick
+# or
+brew install imagemagick
 ```
 
 最後に、テストを実行してうまく動いているかどうか確認してください。
 
-```
-$ rails test
+```bash
+bundle exec rspec
 ```
 
 テストが無事に通ったら、Rails サーバーを立ち上げる準備が整っているはずです。
 
-```
-$ rails server
+```bash
+bin/rails server
 ```
 
 詳しくは、[_Ruby on Rails チュートリアル_](https://railstutorial.jp/)
