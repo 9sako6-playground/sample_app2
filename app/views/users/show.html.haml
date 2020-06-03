@@ -5,7 +5,8 @@
     %h1.flex.m-5.text-lg
       = gravatar_for @user, size: 50
       = @user.name
-
+  %section
+    = render('shared/stats')
 %div
   = render 'follow_form' if loggedin?
   - if @user.microposts.any?
