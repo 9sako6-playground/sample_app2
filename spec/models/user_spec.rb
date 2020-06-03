@@ -12,6 +12,9 @@ RSpec.describe User, type: :model do
     )
   end
 
+  let(:michael) { create(:michael) }
+  let(:archer) { create(:archer) }
+
   it 'user shoulw be valid' do
     expect(user.valid?).to eq true
   end
@@ -82,6 +85,18 @@ RSpec.describe User, type: :model do
 
     it 'authenticated? should return false for a user with nil digest' do
       expect(user.authenticated?('', attribute: :remember)).to eq false
+    end
+  end
+
+  context 'follow, unfollow' do
+    it 'should follow and unfollow a user' do
+      expect(michael.following?(archer)).to eq(false)
+      michael.follow(archer)
+      expect(michael.following?(archer)).to eq(true)
+      expect(michael.following.include?(archer)).to eq(true)
+      expect(archer.followers.include?(michael)).to eq(true)
+      michael.unfollow(archer)
+      expect(michael.following?(archer)).to eq(false)
     end
   end
 end

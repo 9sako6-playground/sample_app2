@@ -1,7 +1,7 @@
 = form_with(model: @micropost) do |f|
   = render('shared/error_messages', object: f.object)
   %div
-    = f.text_area :content, placeholder: 'Compose new micropost...'
+    = f.text_area :content, placeholder: 'Compose new micropost...', class: "resize-y border rounded focus:outline-none focus:shadow-outline"
   = f.submit 'Post'
   %span.picture
     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'

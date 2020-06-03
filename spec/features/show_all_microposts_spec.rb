@@ -4,7 +4,8 @@ require 'rails_helper'
 
 RSpec.feature 'show', type: :feature do
   given(:michael) { create(:michael) }
-  before do
+  # pp self.method(:background).source_location
+  background do
     30.times do |i|
       michael.microposts.create(
         content: "Lorem ipsum #{i}"
