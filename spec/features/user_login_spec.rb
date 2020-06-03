@@ -18,6 +18,7 @@ RSpec.feature 'login', type: :feature do
     fill_in 'session_email',	with: "#{michael.email}.not"
     fill_in 'session_password',	with: 'password'
     click_button('Log in')
-    expect(page).to_not have_text(michael.name)
+    # check error flash message
+    expect(page).to have_text('invalid email/password combination')
   end
 end
