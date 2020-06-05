@@ -15,4 +15,6 @@
           = message
       .min-h-halfscreen= yield
       = render 'layouts/footer'
-    .bg-gray-400.m-6.p-5.rounded= debug(params) if Rails.env.development?
+    - if Rails.env.development?
+      .bg-gray-400.m-6.p-5.rounded= debug(params) 
+      .bg-gray-400.m-6.p-5.rounded= "admin: #{can? :access, :rails_admin}"
