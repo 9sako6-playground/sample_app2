@@ -1,32 +1,43 @@
-name: SampleApp2 Test
+name: CI
 on: 
   push:
     paths-ignore:
       - 'README.md'
       - '.gitignore'
-  pull_request:
-    paths-ignore:
-      - 'README.md'
-      - '.gitignore'
 jobs:
   build:
-    name: test
+    name: RSpec
     runs-on: ubuntu-latest
+    container:
+      image: ruby:2.7.1
+      volumes:
+        - bundle_cache:/usr/local/bundle
     defaults:
       run:
         shell: bash
     steps:
       - uses: actions/checkout@master
-      - name: Cache gems
-        uses: actions/cache@master
+      - uses: actions/cache@v1
         with:
-          path: vendor/bundle
-          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+          path: /usr/local/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-      - name: Cache node_modules
-        uses: actions/cache@master
-        with:
-          path: ./node_modules
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - uses: ./.github/testing
+      - name: install node, yarn
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          apt-get install -y nodejs
+          npm install -g yarn
+          yarn upgrade
+      - name: bundle install
+        run: |
+          bundle config set path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+      - name: setup database
+        env:
+          RAILS_ENV: test
+        run: |
+          bin/rails db:migrate
+      - name: run RSpec
+        run: |
+          bundle exec rspec
