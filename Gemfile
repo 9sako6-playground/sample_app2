@@ -7,7 +7,7 @@ ruby '2.7.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'carrierwave'
-gem 'devise'
+# gem 'devise'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'haml-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.7'
